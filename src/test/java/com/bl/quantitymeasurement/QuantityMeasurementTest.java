@@ -80,15 +80,15 @@ public class QuantityMeasurementTest {
         Assert.assertEquals(value1, value2, 0.0);
     }
     @Test
-    public void givenOneFeetAndOneInchValue_WhenNotEqual_ShouldReturnTrue() {
-        double value1 = quantityMeasurement.getUnit(Units.FEET, 1.0);
-        double value2 = quantityMeasurement.getUnit(Units.INCH, 1.0);
-        Assert.assertEquals(value1, value2, 0.0);
-    }
-    @Test
     public void givenOneInchAndOneFeet_WhenNotEqual_ShouldReturnTrue() {
         double value1 = quantityMeasurement.getUnit(Units.INCH,1.0);
         double value2 = quantityMeasurement.getUnit(Units.FEET,1.0);
+        Assert.assertNotEquals(value1, value2, 0.0);
+    }
+    @Test
+    public void givenOneFeetAndTwelveInch_WhenEqual_ShouldReturnTrue() {
+        double value1 = quantityMeasurement.getUnit(Units.FEET,1.0);
+        double value2 = quantityMeasurement.getUnit(Units.INCH,12.0);
         Assert.assertNotEquals(value1, value2, 0.0);
     }
 }
