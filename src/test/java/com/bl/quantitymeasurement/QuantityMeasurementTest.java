@@ -36,4 +36,5 @@ public class QuantityMeasurementTest {
         double value2 = quantityMeasurement.getFeet(1.0);
         Assert.assertNotEquals(value1, value2, 0.0);
     }
+
 }
