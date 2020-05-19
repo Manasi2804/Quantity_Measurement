@@ -121,4 +121,10 @@ public class QuantityMeasurementTest {
         double Value2=quantityMeasurement.getUnit(Units.FEET,3.0);
         Assert.assertEquals(Value1,Value2,0.0);
     }
+    @Test
+    public void givenTwoInchAndFiveCmValue_WhenEqual_ShouldReturnTrue(){
+        double Value1=quantityMeasurement.getUnit(Units.INCH,2.0);
+        double Value2=quantityMeasurement.getUnit(Units.CM_TO_INCH,5.0);
+        Assert.assertNotEquals(Value1,Value2,0.0);
+    }
 }
