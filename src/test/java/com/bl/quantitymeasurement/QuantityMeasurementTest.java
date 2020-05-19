@@ -30,4 +30,10 @@ public class QuantityMeasurementTest {
         double value2 = quantityMeasurement.getFeet(3.0);
         Assert.assertEquals(value1, value2, 0.0);
     }
+    @Test
+    public void givenDifferentFeetValues_WhenEqual_ShouldReturnFalse(){
+        double value1 = quantityMeasurement.getFeet(0.0);
+        double value2 = quantityMeasurement.getFeet(1.0);
+        Assert.assertNotEquals(value1, value2, 0.0);
+    }
 }
