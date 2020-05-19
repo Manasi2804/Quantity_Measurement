@@ -38,7 +38,7 @@ public class QuantityMeasurementTest {
         double value2 = quantityMeasurement.getFeet(1.0);
         Assert.assertNotEquals(value1, value2, 0.0);
     }
-
+    // Inch
     @Test
     public void givenZeroInchAndZeroInchValue_WhenEqual_ShouldReturnTrue() {
         double value1 = quantityMeasurement.getInch(0.0);
@@ -54,5 +54,11 @@ public class QuantityMeasurementTest {
     public void givenReferenceObjectForInch_WhenEqual_ShouldReturnTrue() {
         QuantityMeasurement object = new QuantityMeasurement();
         Assert.assertEquals(quantityMeasurement, object);
+    }
+    @Test
+    public void givenTwoEqualInchValues_WhenEqual_ShouldReturnTrue() {
+        double value1 = quantityMeasurement.getInch(3.0);
+        double value2 = quantityMeasurement.getInch(3.0);
+        Assert.assertEquals(value1, value2, 0.0);
     }
 }

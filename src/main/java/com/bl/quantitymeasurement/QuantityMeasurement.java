@@ -2,8 +2,12 @@ package com.bl.quantitymeasurement;
 
 public class QuantityMeasurement {
     double feet;
+    double Inch;
     public double getFeet(double feet) {
         return feet;
+    }
+    public double getInch(double inch) {
+        return inch;
     }
     @Override
     public boolean equals(Object o) {
