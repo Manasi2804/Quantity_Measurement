@@ -93,14 +93,29 @@ public class QuantityMeasurementTest {
     }
     @Test
     public void givenThreeFeetAndOneYardValue_WhenEqual_ShouldReturnTrue(){
-        double feetValue=quantityMeasurement.getUnit(Units.FEET,3.0);
-        double yardValue=quantityMeasurement.getUnit(Units.YARD,1.0);
-        Assert.assertEquals(yardValue,feetValue,0.0);
+        double Value1=quantityMeasurement.getUnit(Units.FEET,3.0);
+        double Value2=quantityMeasurement.getUnit(Units.YARD,1.0);
+        Assert.assertEquals(Value2,Value1,0.0);
     }
     @Test
     public void givenOneFeetAndOneYardValue_WhenEqual_ShouldReturnTrue(){
-        double feetValue=quantityMeasurement.getUnit(Units.FEET,1.0);
-        double yardValue=quantityMeasurement.getUnit(Units.YARD,3.0);
-        Assert.assertNotEquals(yardValue,feetValue,0.0);
+        double Value1=quantityMeasurement.getUnit(Units.FEET,1.0);
+        double Value2=quantityMeasurement.getUnit(Units.YARD,1.0);
+        Assert.assertNotEquals(Value1,Value2,0.0);
+    }
+    @Test
+    public void givenOneInchAndOneYardValue_WhenNotEqual_ShouldReturnFalse()
+    {
+        double Value1=quantityMeasurement.getUnit(Units.FEET,1.0);
+        double Value2=quantityMeasurement.getUnit(Units.YARD,3.0);
+        Assert.assertNotEquals(Value1,Value2,0.0);
+    }
+
+    @Test
+    public void givenOneYardAndThirtySixInchValue_WhenEqual_ShouldReturnTrue()
+    {
+        double Value1=quantityMeasurement.getUnit(Units.YARD,1.0);
+        double Value2=quantityMeasurement.getUnit(Units.INCH,36.0);
+        Assert.assertNotEquals(Value2,Value1,0.0);
     }
 }
