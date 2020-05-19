@@ -64,4 +64,11 @@ public class QuantityMeasurementTest {
         double value2 = quantityMeasurement.getUnit(Units.INCH,1.0);
         Assert.assertNotEquals(value1, value2, 0.0);
     }
+    @Test
+    public void givenZeroFeetAndZeroInchValue_WhenEqual_ThenShouldReturnTrue()
+    {
+        double value1=quantityMeasurement.getUnit(Units.FEET,0.0);
+        double value2=quantityMeasurement.getUnit(Units.INCH,0.0);
+        Assert.assertEquals(value1,value2,0.0);
+    }
 }
