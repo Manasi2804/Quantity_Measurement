@@ -17,4 +17,9 @@ public class QuantityMeasurementTest {
         boolean NullValue = quantityMeasurement.equals(null);
         Assert.assertEquals(false, NullValue);
     }
+    @Test
+    public void givenReferenceObject_WhenEqual_ShouldReturnTrue() {
+        QuantityMeasurement object = new QuantityMeasurement();
+        Assert.assertEquals(quantityMeasurement, object);
+    }
 }
