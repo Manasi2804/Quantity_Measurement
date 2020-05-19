@@ -57,6 +57,7 @@ public class QuantityMeasurementTest {
         double value2 = quantityMeasurement.getUnit(Units.INCH,3.0);
         Assert.assertEquals(value1, value2, 0.0);
     }
+
     @Test
     public void givenDifferentInchValues_WhenEqual_ShouldReturnFalse() {
         double value1 = quantityMeasurement.getUnit(Units.INCH,0.0);
