@@ -5,10 +5,16 @@ import org.junit.Test;
 
 public class QuantityMeasurementTest {
     QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+
     @Test
-    public void givenZeroFeetAndZeroFeetValue_WhenEqual_ShouldReturnTrue(){
+    public void givenZeroFeetAndZeroFeetValue_WhenEqual_ShouldReturnTrue() {
         double value1 = quantityMeasurement.getFeet(0.0);
         double value2 = quantityMeasurement.getFeet(0.0);
         Assert.assertEquals(value1, value2, 0.0);
+    }
+    @Test
+    public void givenFeetValue_WhenNull_ShouldReturnFalse() {
+        boolean NullValue = quantityMeasurement.equals(null);
+        Assert.assertEquals(false, NullValue);
     }
 }
