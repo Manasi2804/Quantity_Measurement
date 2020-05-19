@@ -97,4 +97,10 @@ public class QuantityMeasurementTest {
         double yardValue=quantityMeasurement.getUnit(Units.YARD,1.0);
         Assert.assertEquals(yardValue,feetValue,0.0);
     }
+    @Test
+    public void givenOneFeetAndOneYardValue_WhenEqual_ShouldReturnTrue(){
+        double feetValue=quantityMeasurement.getUnit(Units.FEET,1.0);
+        double yardValue=quantityMeasurement.getUnit(Units.YARD,3.0);
+        Assert.assertNotEquals(yardValue,feetValue,0.0);
+    }
 }
