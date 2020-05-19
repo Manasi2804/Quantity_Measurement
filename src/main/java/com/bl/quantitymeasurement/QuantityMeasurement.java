@@ -1,19 +1,14 @@
 package com.bl.quantitymeasurement;
 
-public class QuantityMeasurement {
-    double feet;
-    double Inch;
-    public double getFeet(double feet) {
-        return feet;
-    }
-    public double getInch(double inch) {
-        return inch;
+public class QuantityMeasurement{
+    public double getUnit( Units units, double value) {
+        return value * units.unit;
     }
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        QuantityMeasurement that = (QuantityMeasurement) o;
-        return Double.compare(that.feet, feet) == 0;
+    public boolean equals(Object obj) {
+        if (obj==null) return false;
+        if (this==obj)return true;
+        if (this.getClass()==obj.getClass())return true;
+        return super.equals(obj);
     }
 }
