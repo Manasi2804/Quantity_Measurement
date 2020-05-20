@@ -9,7 +9,12 @@ public enum Units {
     //volume
     LITRE(1.0),
     GALLON_TO_LITRE(1*3.78),
-    MILLILITER_TO_LITRE(1.0/1000);
+    MILLILITER_TO_LITRE(1.0/1000),
+    //Weight
+    KG(1.0),
+    TONNE_TO_KG(1.0*1000),
+    GRAMS_TO_KG(1.0/1000);
+
     final double unit;
     Units(double unit) {
         this.unit = unit;

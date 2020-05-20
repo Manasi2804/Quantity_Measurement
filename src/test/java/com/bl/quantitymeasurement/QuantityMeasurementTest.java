@@ -1,5 +1,6 @@
 package com.bl.quantitymeasurement;
 
+import com.bl.quantitymeasurement.exception.QuantityMeasurementException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -190,5 +191,21 @@ public class QuantityMeasurementTest {
         double Value1 = quantityMeasurement.getUnit(Units.LITRE, 1.0);
         double Value2 = quantityMeasurement.getUnit(Units.MILLILITER_TO_LITRE, 1000);
         Assert.assertEquals(2, Value1 + Value2, 0.0);
+    }
+    @Test
+    public void givenOneTonneAndOneThousandGrams_WhenAdded_ShouldReturnResult(){
+        double Value1=quantityMeasurement.getUnit(Units.TONNE_TO_KG,1.0);
+        double Value2=quantityMeasurement.getUnit(Units.GRAMS_TO_KG,1000.0);
+        Assert.assertEquals(1001.0,Value1+Value2,0.0);
+    }
+    @Test
+    public void givenOneTonneAndOneThousandGrams_WhenNegative_ShouldReturnException() {
+        try {
+            double Value1 = quantityMeasurement.getUnit(Units.TONNE_TO_KG, -1.0);
+            double Value2 = quantityMeasurement.getUnit(Units.GRAMS_TO_KG, 1000);
+            Assert.assertEquals(Value1, Value2, 0.0);
+        } catch (QuantityMeasurementException e) {
+            Assert.assertEquals("Value Should be Correct", e.getMessage());
+        }
     }
 }
