@@ -1,11 +1,11 @@
 package com.bl.quantitymeasurement;
-
 import com.bl.quantitymeasurement.exception.QuantityMeasurementException;
 
 public class QuantityMeasurement{
+
     public double getUnit(Units units, double value) {
         if (value < 0) {
-            throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.ENTER_INPUT, "Value Should be Correct");
+            throw new QuantityMeasurementException(QuantityMeasurementException.ExceptionType.ENTER_VALUE, "Value Should be Correct");
         } else {
             return value * units.unit;
         }
