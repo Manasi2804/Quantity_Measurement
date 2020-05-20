@@ -86,9 +86,9 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(value1, value2, 0.0);
     }
     @Test
-    public void givenOneFeetAndTwelveInch_WhenEqual_ShouldReturnTrue() {
-        double value1 = quantityMeasurement.getUnit(Units.FEET,1.0);
-        double value2 = quantityMeasurement.getUnit(Units.INCH,12.0);
+    public void givenOneInchAndTwelveFeet_WhenEqual_ShouldReturnTrue() {
+        double value1 = quantityMeasurement.getUnit(Units.FEET,12.0);
+        double value2 = quantityMeasurement.getUnit(Units.INCH,1.0);
         Assert.assertNotEquals(value1, value2, 0.0);
     }
     @Test
@@ -110,9 +110,9 @@ public class QuantityMeasurementTest {
         Assert.assertNotEquals(Value1,Value2,0.0);
     }
     @Test
-    public void givenOneYardAndThirtySixInchValue_WhenEqual_ShouldReturnTrue(){
-        double Value1=quantityMeasurement.getUnit(Units.YARD,1.0);
-        double Value2=quantityMeasurement.getUnit(Units.INCH,36.0);
+    public void givenOneInchAndThirtySixYardValue_WhenEqual_ShouldReturnTrue(){
+        double Value1=quantityMeasurement.getUnit(Units.YARD,36.0);
+        double Value2=quantityMeasurement.getUnit(Units.INCH,1.0);
         Assert.assertNotEquals(Value2,Value1,0.0);
     }
     @Test
@@ -124,7 +124,14 @@ public class QuantityMeasurementTest {
     @Test
     public void givenTwoInchAndFiveCmValue_WhenEqual_ShouldReturnTrue(){
         double Value1=quantityMeasurement.getUnit(Units.INCH,2.0);
-        double Value2=quantityMeasurement.getUnit(Units.CM_TO_INCH,5.0);
-        Assert.assertNotEquals(Value1,Value2,0.0);
+        double Value2=quantityMeasurement.getUnit(Units.CM,5.0);
+        Assert.assertEquals(Value1,Value2,0.0);
+    }
+    @Test
+    public void givenTwoInchAndTwoInchValue_WhenAdd_ShouldReturnTrue(){
+        double Value1=quantityMeasurement.getUnit(Units.INCH,2.0);
+        double Value2=quantityMeasurement.getUnit(Units.INCH,2.0);
+        double result=Value1+Value2;
+        Assert.assertEquals(4,result,0.0);
     }
 }
