@@ -127,12 +127,19 @@ public class QuantityMeasurementTest {
         double Value2=quantityMeasurement.getUnit(Units.CM,5.0);
         Assert.assertEquals(Value1,Value2,0.0);
     }
-
     @Test
     public void givenTwoInchAndTwoInchValue_WhenAdd_ShouldReturnTrue(){
         double Value1=quantityMeasurement.getUnit(Units.INCH,2.0);
         double Value2=quantityMeasurement.getUnit(Units.INCH,2.0);
         double result=Value1+Value2;
         Assert.assertEquals(4,result,0.0);
+    }
+    @Test
+    public void givenOneFeetAndTwoInchValue_WhenAdd_ShouldReturnTrue()
+    {
+        double Value1=quantityMeasurement.getUnit(Units.FEET,1.0);
+        double Value2=quantityMeasurement.getUnit(Units.INCH,2.0);
+        double result=Value1+Value2;
+        Assert.assertEquals(14,result,0.0);
     }
 }
