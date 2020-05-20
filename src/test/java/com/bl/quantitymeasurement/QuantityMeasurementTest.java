@@ -165,16 +165,30 @@ public class QuantityMeasurementTest {
         double Value2 = quantityMeasurement.getUnit(Units.CM, 2.5);
         Assert.assertEquals(3, Value1 + Value2, 0.0);
     }
+
     @Test
     public void givenOneGallonAndThreePointSevenEightLitValue_WhenEqual_ShouldReturnTrue() {
         double Value1 = quantityMeasurement.getUnit(Units.GALLON_TO_LITRE, 1.0);
         double Value2 = quantityMeasurement.getUnit(Units.LITRE, 3.78);
         Assert.assertEquals(Value1, Value2, 0.0);
     }
+
     @Test
-    public void givenOneLitreAndOneThousandMilliLitre_WhenEqual_ShouldReturnTrue(){
-        double Value1=quantityMeasurement.getUnit(Units.LITRE,1.0);
-        double Value2=quantityMeasurement.getUnit(Units.MILLILITER_TO_LITRE,1000);
-        Assert.assertEquals(Value1,Value2,0.0);
+    public void givenOneLitreAndOneThousandMilliLitre_WhenEqual_ShouldReturnTrue() {
+        double Value1 = quantityMeasurement.getUnit(Units.LITRE, 1.0);
+        double Value2 = quantityMeasurement.getUnit(Units.MILLILITER_TO_LITRE, 1000);
+        Assert.assertEquals(Value1, Value2, 0.0);
+    }
+    @Test
+    public void givenOneGallonAndThreePointSevenEightLit_WhenAdd_ShouldReturnResult() {
+        double Value1 = quantityMeasurement.getUnit(Units.GALLON_TO_LITRE, 1.0);
+        double Value2 = quantityMeasurement.getUnit(Units.LITRE, 3.78);
+        Assert.assertEquals(7.56, Value1 + Value2, 0.0);
+    }
+    @Test
+    public void givenOneLitreAndOneThousandMilliLitre_WhenAdd_ShouldReturnResult() {
+        double Value1 = quantityMeasurement.getUnit(Units.LITRE, 1.0);
+        double Value2 = quantityMeasurement.getUnit(Units.MILLILITER_TO_LITRE, 1000);
+        Assert.assertEquals(2, Value1 + Value2, 0.0);
     }
 }
